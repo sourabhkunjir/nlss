@@ -38,6 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
               padding: const EdgeInsets.all(28.0),
               child: Image.asset("assets/images/education.png"),
             ),
+            
             Text("Exam Management System",style: AppTextStyles.headline,),
             Text("Built for educators !", style: AppTextStyles.description),
           ],
