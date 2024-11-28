@@ -1,4 +1,5 @@
 import 'package:exam_management/themes/static_theme_management.dart';
+import 'package:exam_management/ui/add_new_teacher_screen.dart';
 import 'package:flutter/material.dart';
 
 class AddTeacherScreen extends StatelessWidget {
@@ -55,11 +56,17 @@ class AddTeacherScreen extends StatelessWidget {
             width: 10,
           ),
           FloatingActionButton(
-            heroTag: 'addButton', 
+            heroTag: 'addButton',
             child: Icon(Icons.add),
             backgroundColor: Colors.green,
             foregroundColor: AppColors.kinverseprimary,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => AddNewteacherScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),

@@ -9,7 +9,7 @@ class AddStudentScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add teacher screen"),
+        title: Text("Add student screen"),
         backgroundColor: AppColors.kadmin,
         foregroundColor: AppColors.kinverseprimary,
       ),
