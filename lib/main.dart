@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'ui/registration_selection_module.dart';
 
 void main() {

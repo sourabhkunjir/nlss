@@ -1,8 +1,11 @@
 import 'package:exam_management/themes/static_theme_management.dart';
 import 'package:flutter/material.dart';
+import '../widgets/coustom_container.dart';
+import '../widgets/coustom_textfield.dart';
 
-class AddNewteacherScreen extends StatelessWidget {
-  const AddNewteacherScreen({super.key});
+
+class AddNewTeacherScreen extends StatelessWidget {
+  const AddNewTeacherScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +15,13 @@ class AddNewteacherScreen extends StatelessWidget {
     final TextEditingController phoneController = TextEditingController();
     final TextEditingController subjectController = TextEditingController();
 
+    final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Add New Teacher"),
+        backgroundColor: AppColors.kadmin,
+        foregroundColor: AppColors.kinverseprimary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -26,64 +33,53 @@ class AddNewteacherScreen extends StatelessWidget {
               style: AppTextStyles.subtitle,
             ),
             const SizedBox(height: 16),
-            // Name TextField
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                labelText: "Name",
-                hintText: "Enter teacher's name",
-                border: OutlineInputBorder(),
-              ),
+            // Name CustomTextField
+            CustomTextField(
+              labelText: "Name",
+              hintText: "Enter teacher's name",
+              prefixIcon: Icons.person,
             ),
             const SizedBox(height: 16),
-            // Email TextField
-            TextField(
-              controller: emailController,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: "Email",
-                hintText: "Enter teacher's email",
-                border: OutlineInputBorder(),
-              ),
+            // Email CustomTextField
+            CustomTextField(
+              labelText: "Email",
+              hintText: "Enter teacher's email",
+              prefixIcon: Icons.email,
             ),
             const SizedBox(height: 16),
-            // Phone Number TextField
-            TextField(
-              controller: phoneController,
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                labelText: "Phone Number",
-                hintText: "Enter teacher's phone number",
-                border: OutlineInputBorder(),
-              ),
+            // Phone Number CustomTextField
+            CustomTextField(
+              labelText: "Phone Number",
+              hintText: "Enter teacher's phone number",
+              prefixIcon: Icons.phone,
             ),
             const SizedBox(height: 16),
-            // Subject Specialization TextField
-            TextField(
-              controller: subjectController,
-              decoration: InputDecoration(
-                labelText: "Subject Specialization",
-                hintText: "Enter subject specialization",
-                border: OutlineInputBorder(),
-              ),
+            // Subject Specialization CustomTextField
+            CustomTextField(
+              labelText: "Subject Specialization",
+              hintText: "Enter subject specialization",
+              prefixIcon: Icons.book,
             ),
             const SizedBox(height: 24),
             // Submit Button
             Center(
-              child: ElevatedButton(
-                onPressed: () {
+              child: CoustomContainer(
+                width: width,
+                finalwidth: 50,
+                color: AppColors.kprimary,
+                text: "Submit",
+                onTap: () {
                   // Example: Print values to console
                   print("Name: ${nameController.text}");
                   print("Email: ${emailController.text}");
                   print("Phone: ${phoneController.text}");
                   print("Subject: ${subjectController.text}");
 
-                  // You can implement further logic to save or submit the data
+                  // Example Snackbar
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text("Teacher added successfully!")),
                   );
                 },
-                child: const Text("Submit"),
               ),
             ),
           ],

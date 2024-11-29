@@ -1,4 +1,5 @@
 import 'package:exam_management/themes/static_theme_management.dart';
+import 'package:exam_management/ui/profile_detail_screen.dart';
 import 'package:exam_management/widgets/coustom_card.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,9 @@ class AdminDashboard extends StatelessWidget {
           IconButton(
             onPressed: () {
               // implement profile logic here
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ProfileDetailsScreen(),
+              ));
             },
             icon: Icon(Icons.person_4_outlined),
           ),
@@ -41,8 +45,7 @@ class AdminDashboard extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     title: Text("Institute name : ",
-                        style:
-                            AppTextStyles.headline),
+                        style: AppTextStyles.headline),
                     subtitle: Text(
                       "Institute address ",
                       style:
@@ -63,14 +66,12 @@ class AdminDashboard extends StatelessWidget {
                   cardWidth: cardWidth,
                   text: "Total Teacher",
                   totalNumber: "20",
-
                   onTap: () {},
                 ),
                 CoustomCard(
                   cardWidth: cardWidth,
                   text: "Total Student",
                   totalNumber: "40",
-
                   onTap: () {},
                 ),
               ],
@@ -84,7 +85,7 @@ class AdminDashboard extends StatelessWidget {
                 CoustomCard(
                   cardWidth: cardWidth,
                   text: "Total Exams",
-                   totalNumber: "60",
+                  totalNumber: "60",
                   onTap: () {},
                 ),
                 CoustomCard(
