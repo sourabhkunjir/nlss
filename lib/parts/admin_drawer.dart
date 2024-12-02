@@ -2,11 +2,12 @@ import 'package:exam_management/ui/add_student_screen.dart';
 import 'package:exam_management/ui/add_teacher_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../ui/rank_screen.dart';
 import '../ui/report_screen.dart';
 import '../widgets/coustom_listtile.dart';
 
-class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key});
+class AdminDrawer extends StatelessWidget {
+  const AdminDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +31,14 @@ class MyDrawer extends StatelessWidget {
             icon: Icons.home,
             text: 'Dashboard',
             onTap: () {
-              // Navigate to home screen
-              Navigator.pop(context); // Close the drawer
+              Navigator.pop(context); 
             },
           ),
           CustomListTile(
             icon: Icons.add_box,
             text: 'Add teacher',
             onTap: () {
-              // Navigate to settings screen
-              Navigator.pop(context); // Close the drawer
+              Navigator.pop(context);
 
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -52,10 +51,9 @@ class MyDrawer extends StatelessWidget {
             icon: Icons.add_business,
             text: 'Add student',
             onTap: () {
-              // Navigate to about screen
-              Navigator.pop(context); // Close the drawer
+              Navigator.pop(context); 
 
-               Navigator.of(context).push(
+              Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => AddStudentScreen(),
                 ),
@@ -66,12 +64,24 @@ class MyDrawer extends StatelessWidget {
             icon: Icons.score_sharp,
             text: 'View Reports/Scores',
             onTap: () {
-              // Navigate to about screen
-              Navigator.pop(context); // Close the drawer
+              Navigator.pop(context);
 
-                Navigator.of(context).push(
+              Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => ReportScreen(),
+                ),
+              );
+            },
+          ),
+          CustomListTile(
+            icon: Icons.sports_score_outlined,
+            text: 'Ranks',
+            onTap: () {
+              Navigator.pop(context);
+
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => RankScreen(),
                 ),
               );
             },
@@ -80,8 +90,7 @@ class MyDrawer extends StatelessWidget {
             icon: Icons.logout,
             text: 'Logout',
             onTap: () {
-              // Navigate to about screen
-              Navigator.pop(context); // Close the drawer
+              Navigator.pop(context); 
             },
           ),
         ],

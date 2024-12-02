@@ -7,7 +7,8 @@ class CoustomCard extends StatelessWidget {
     super.key,
     required this.cardWidth,
     required this.text,
-    required this.onTap, required this.totalNumber,
+    required this.onTap,
+    required this.totalNumber,
   });
 
   final double cardWidth;
@@ -24,13 +25,17 @@ class CoustomCard extends StatelessWidget {
         height: cardWidth,
         width: cardWidth,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.kadmin, width: 2)),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: AppColors.kadmin, width: 2),
+        ),
         child: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(totalNumber,style: AppTextStyles.headline,),
+            Text(
+              totalNumber,
+              style: AppTextStyles.headline,
+            ),
             Text(
               text,
               style: AppTextStyles.title,

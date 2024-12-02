@@ -1,6 +1,7 @@
 import 'package:exam_management/themes/static_theme_management.dart';
 import 'package:exam_management/ui/admin_details.dart';
 import 'package:exam_management/ui/teacher_dashboard.dart';
+import 'package:exam_management/ui/teacher_details.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/coustom_container.dart';
@@ -38,7 +39,7 @@ class RegistrationSelectionModule extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
-                    builder: (context) => TeacherDashboard(),
+                    builder: (context) => TeacherDetails(),
                   ),
                   (route) => false,
                 );

@@ -3,7 +3,7 @@ import 'package:exam_management/ui/profile_detail_screen.dart';
 import 'package:exam_management/widgets/coustom_card.dart';
 import 'package:flutter/material.dart';
 
-import '../parts/mydrawer.dart';
+import '../parts/admin_drawer.dart';
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({super.key});
@@ -29,7 +29,7 @@ class AdminDashboard extends StatelessWidget {
           ),
         ],
       ),
-      drawer: MyDrawer(),
+      drawer: AdminDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -85,9 +85,21 @@ class AdminDashboard extends StatelessWidget {
                 CoustomCard(
                   cardWidth: cardWidth,
                   text: "Total Exams",
+                  totalNumber: "50",
+                  onTap: () {},
+                ),
+                CoustomCard(
+                  cardWidth: cardWidth,
+                  text: "Upcoming Exams",
                   totalNumber: "60",
                   onTap: () {},
                 ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
                 CoustomCard(
                   cardWidth: cardWidth,
                   text: "Upcoming Events",
